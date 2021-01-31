@@ -1,8 +1,8 @@
-let express = require("express");
-let router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 // Require the controllers WHICH WE DID NOT CREATE YET!!
-let permissionController = require("../controllers/permission");
+const permissionController = require("../controllers/permission");
 
 // a simple test url to check that all of our files are communicating correctly.
 router.get("/test", permissionController.test);

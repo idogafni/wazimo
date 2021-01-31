@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './app.css';
 import ReactImage from '../images/react.png';
 
-import User from "../Components/User/User";
+import User from "../components/User/User";
 
 export default class App extends Component {
   state = {
@@ -12,13 +13,11 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    fetch('/api/getData')
-      .then(res => res.json())
-      .then(data => this.setState({ 
-        users: data.users,
-        screens : data.screens,
-        permissions : data.permissions
-      }));
+    axios.get(`/api/getData`)
+      .then(res => {
+        const data = res.data;
+        this.setState({ users: data.users });
+      });
   }
 
   render() {

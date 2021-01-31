@@ -1,4 +1,4 @@
-let Permission = require("../models/permission");
+const Permission = require("../models/permission");
 const mongoose = require("mongoose");
 const dbo = mongoose.connection;
 

@@ -1,7 +1,7 @@
-let mongoose = require("mongoose");
-let Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-let PermissionSchema = new Schema({
+const PermissionSchema = new Schema({
     id: {type: String, required: true},
     email: { type: String, required: true, max: 100 },
     screens: {

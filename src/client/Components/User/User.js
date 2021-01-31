@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Screen from "../Screen/Screen";
+import withClass from "../../hoc/withClass";
 
 import classes from "./User.css";
 
@@ -52,4 +54,12 @@ class User extends Component {
     }
 }
 
+User.propTypes = {
+    click: PropTypes.func,
+    email: PropTypes.string,
+    id: PropTypes.string
+};
+
 export default User;
+//using HOC
+//export default withClass(User, classes.User);
